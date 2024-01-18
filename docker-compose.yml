@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8.2 
+    container_name: Task  
+    restart: always  
+    environment:
+      MYSQL_DATABASE: TaskDb
+      MYSQL_USER: mysqlUser
+      MYSQL_PASSWORD: PassDb123
+      MYSQL_ROOT_PASSWORD: PassDb123
+    ports:
+      - "3306:3306"  
+    volumes:
+      - mysql_data:/var/lib/mysql 
+
+volumes:
+  mysql_data:
